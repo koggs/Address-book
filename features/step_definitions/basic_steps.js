@@ -13,16 +13,15 @@ Then("I should see {string}", async function(content) {
   return await this.pageHasTextContent(content)
 });
 
-When('I click {string}', async function (string) {
+When('I click {string}', async function(string) {
   return await this.clickOnAddContactBtn()
 });
 
-Then('I fill in {string} with {string}', function (string, string2) {
-  return 'pending';
+Then('I fill in {string} with {string}', async function(field, content) {
+  return await this.fillFormField(field.toLowerCase(), content)
 });
 
-
-Then('I should have {int} contact in my address Address book', function (int) {
+Then('I should have {int} contact in my address Address book', function(int) {
   return 'pending';
 });
 
