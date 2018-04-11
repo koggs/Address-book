@@ -1,4 +1,4 @@
-const { After, Given, Then } = require('cucumber')
+const { After, Given, Then, When } = require('cucumber')
 
 
 After(async function() {
@@ -10,5 +10,22 @@ Given("I visit the site", async function() {
 });
 
 Then("I should see {string}", async function(content) {
-    return await this.pageHasTextContent(content)
+  return await this.pageHasTextContent(content)
+});
+
+When('I click {string}', async function (string) {
+  return await this.clickOnAddContactBtn()
+});
+
+Then('I fill in {string} with {string}', function (string, string2) {
+  return 'pending';
+});
+
+
+Then('I should have {int} contact in my address Address book', function (int) {
+  return 'pending';
+});
+
+Then('I should not see {string}', function (string) {
+  return 'pending';
 });
