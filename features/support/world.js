@@ -17,6 +17,15 @@ class AddressBookWorld {
   async closeHomePage() {
     await this.browser.close()
   }
+
+  async pageHasTextContent(expectedContent){
+    const pageContent = await this.page.content()
+    let match = pageContent.match(expectedContent)
+    let actualContent = match[0]
+
+    expect(actualContent).to.be.eq(expectedContent)
+  }
+
 }
 
 setWorldConstructor(AddressBookWorld)
