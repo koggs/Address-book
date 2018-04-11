@@ -8,3 +8,4 @@ Scenario: Create a new contacts
   Given I visit the site
   Then I should see "Contacts"
   And I should see "You have no contacts in your address book"
+  
