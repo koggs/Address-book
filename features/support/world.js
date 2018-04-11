@@ -14,7 +14,9 @@ class AddressBookWorld {
     this.page = await this.browser.newPage()
     await this.page.goto(HOME_PAGE)
  }
-
+  async closeHomePage() {
+    await this.browser.close()
+  }
 }
 
 setWorldConstructor(AddressBookWorld)
