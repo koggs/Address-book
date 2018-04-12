@@ -1,2 +1,27 @@
-console.log('hello april 2180 cohort!');
-console.log('We are going to build a contact book');
+document.addEventListener('DOMContentLoaded', () => {
+
+  const contactForm = document.querySelector('.new-contact-form')
+ 
+
+  contactForm.addEventListener('submit', event => {
+    event.preventDefault()
+    const storage = window.localStorage
+
+  // 1. Read all input fields and get their values
+    const {name, email, phone, company, notes, twitter} = contactForm.elements
+
+    const contact = {
+      name: name.value,
+      email: email.value,
+      phone: phone.value,
+      company: company.value,
+      notes: notes.value,
+      twitter: twitter.value,
+    }
+
+    console.log(contact)
+    storage.setItem('contacts', JSON.stringify([contact]))
+// 2. Save them to our storage
+
+})
+})

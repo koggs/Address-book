@@ -79,7 +79,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nconsole.log('hello april 2180 cohort!');\nconsole.log('We are going to build a contact book');\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("\n\ndocument.addEventListener('DOMContentLoaded', function () {\n\n  var contactForm = document.querySelector('.new-contact-form');\n\n  contactForm.addEventListener('submit', function (event) {\n    event.preventDefault();\n    var storage = window.localStorage;\n\n    // 1. Read all input fields and get their values\n    var _contactForm$elements = contactForm.elements,\n        name = _contactForm$elements.name,\n        email = _contactForm$elements.email,\n        phone = _contactForm$elements.phone,\n        company = _contactForm$elements.company,\n        notes = _contactForm$elements.notes,\n        twitter = _contactForm$elements.twitter;\n\n\n    var contact = {\n      name: name.value,\n      email: email.value,\n      phone: phone.value,\n      company: company.value,\n      notes: notes.value,\n      twitter: twitter.value\n    };\n\n    console.log(contact);\n    storage.setItem('contacts', JSON.stringify([contact]));\n    // 2. Save them to our storage\n  });\n});\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ })
 
