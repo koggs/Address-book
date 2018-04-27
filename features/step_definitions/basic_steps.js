@@ -1,4 +1,9 @@
-const { After, Given, Then, When } = require('cucumber')
+const {
+  After,
+  Given,
+  Then,
+  When
+} = require('cucumber')
 
 
 After(async function() {
@@ -6,7 +11,7 @@ After(async function() {
 })
 
 Given("I visit the site", async function() {
-    return await this.openHomePage()
+  return await this.openHomePage()
 })
 
 Then("I should see {string}", async function(content) {
@@ -25,9 +30,17 @@ Then('I fill in {string} with {string}', async function(field, content) {
 })
 
 Then('I should have {int} contact in my address book', async function(contactCount) {
-   return await this.checkContactStorageCount(contactCount)
+  return await this.checkContactStorageCount(contactCount)
 })
 
 Then('I should not see {string}', async function(content) {
   return await this.pageDoesNotHaveTextContent(content)
 })
+
+Then('The {string} should not be visible', async function (element) {
+    return await this.visibleElement(element, false);
+});
+
+Then('The {string} should be visible', async function (element) {
+    return await this.visibleElement(element, true);
+});

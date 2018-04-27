@@ -5,30 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Address book</title>
+   <link rel="stylesheet" href="src/address-bookcss.css">
 </head>
 
 <body>
   <h1>Contacts</h1>
-<button class="add-contact">Add Contact</button>
-  <div class="contact-list"></div>
+    <button class="add-contact">Add Contact</button>
+    <button class="hide-form" style="display: block">Cancel</button>
 
-<form action="#" class="new-contact-form">
-  <lable for="name">Name</lable>
-  <input id="contact-name" name="name" type="text">
-  <lable for="email">Email</lable>
-  <input id="contact-email" name="email" type="email">
-  <lable for="phone">Phone</lable>
-  <input id="contact-phone" name="phone" type="phone">
-  <lable for="company">Company</lable>
-  <input id="contact-company" name="company" type="text">
-  <lable for="notes">Notes</lable>
-  <textarea id="contact-notes" name="notes" type="text"></textarea>
-  <lable for="twitter">Twitter</lable>
-  <input id="contact-twitter" name="twitter" type="text">
+    <div class="contact-list"></div>
 
-  <input class="save-contact" type="submit" value="Save contact">
+    <form action="#" class=" new-contact-form">
+      <p class="blocktext"><lable for="name">Name</lable>
+      <input id="contact-name" name="name" type="text" required></p>
+      <p><lable for="email">Email</lable>
+      <input id="contact-email" name="email" type="email" required></p>
+      <p><lable for="phone">Phone</lable>
+      <input id="contact-phone" name="phone" type="phone" required></p>
+      <p><lable for="company">Company</lable>
+      <input id="contact-company" name="company" type="text"></p>
+      <p><lable for="notes">Notes</lable>
+      <textarea id="contact-notes" name="notes" type="text"></textarea></p>
+      <p><lable for="twitter">Twitter</lable>
+      <input id="contact-twitter" name="twitter" type="text"></p>
 
-</form>
+      <input class="save-contact" type="submit" value="Save contact">
+
+    </form>
 
 <script src="./dist/bundle.js"></script>
 </body>

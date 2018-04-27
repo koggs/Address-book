@@ -41,6 +41,8 @@ const resetFormField = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderContacts()
+  document.querySelector('.new-contact-form').style.display = 'none';
+  document.querySelector('.hide-form').style.display = 'none';
   const contactForm = document.querySelector('.new-contact-form')
 
   contactForm.addEventListener('submit', event => {
@@ -69,4 +71,25 @@ document.addEventListener('DOMContentLoaded', () => {
   renderContacts()
   resetFormField()
   })
+
+document.querySelector(".add-contact").onclick = function() {
+    document.querySelector('.add-contact').style.display = 'none';
+    document.querySelector(".new-contact-form").hidden = false;
+    document.querySelector('.hide-form').style.display = 'block';
+}
+
+document.querySelector(".hide-form").onclick = function() {
+    document.querySelector('.add-contact').style.display = 'block';
+    document.querySelector('.new-contact-form').style.display = 'none';
+    document.querySelector('.hide-form').style.display = 'none';
+}
+
+
+
+
+
+
+
+
+
 })

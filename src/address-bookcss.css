@@ -1,0 +1,11 @@
+
+
+body {
+  background-color: teal
+}
+
+form {
+    display: inline-block;
+    text-align: center;
+    item-align : right;
+}

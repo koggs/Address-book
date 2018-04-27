@@ -10,7 +10,7 @@ class AddressBookWorld {
 // Open the home page using puppeteer
 // async/await
   async openHomePage() {
-    this.browser = await puppeteer.launch({headless: false, slowmo: 10 })
+    this.browser = await puppeteer.launch({headless: false, slowmo: 40 })
     this.page = await this.browser.newPage()
     await this.page.goto(HOME_PAGE)
  }
@@ -56,19 +56,26 @@ class AddressBookWorld {
 
     expect(actualCount).to.be.eq(expectedCount)
   }
-btnSelectorFromName(btnName) {
-  switch (btnName) {
-    case 'add contact' :
-      return '.add-contact'
-      break
-    case 'save contact' :
-      return '.save-contact'
-      break
-    default:
-      throw `${btnName} button is not defined`
-      break
+
+  btnSelectorFromName(btnName) {
+    switch (btnName) {
+      case 'add contact' :
+        return '.add-contact'
+        break
+      case 'save contact' :
+        return '.save-contact'
+        break
+      default:
+       throw `${btnName} button is not defined`
+       break
    }
   }
+
+  async visibleElement(element, visibility) {
+    let el = '.new-contact-form'
+    return await this.page.waitForSelector(el, {visible: visibility})
+  }
+
 }
 
 setWorldConstructor(AddressBookWorld)

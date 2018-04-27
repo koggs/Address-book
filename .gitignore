@@ -4,3 +4,4 @@ node_modules
 *.log
 dist/
 large_files.txt
+.idea/
